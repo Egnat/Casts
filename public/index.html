@@ -1,43 +1,86 @@
+<!--Создание Нового проекта в реакт npx create-react-app my-app, вместо my-app пишу название своего проекта, на пример, tresha_sass. Сборку проекта можно делать одновременно и в локахост, и не в локахосте, но при отправке проекта в гитхаб, нужно заблокировать индекс.штмл в папблик, скопировав предварительно весь код в индекс.штмл, который лежит в корневой папкеДелая сборку не в локахост, нужно заблокировать индекс.штмл, находящийся в папке паблик. Делая сборку в реакт, чтобы потом отправить в гитхаб и со страницы гитхаба, чтобы фотки открылись, фотки нужно использовать с расширением png, когда используешь фотки с компа, jpg гитхаб не принимает. Изменить расширение фоток можно через фигму, скопировав нужное фото в фигму и с фигмы обратно в проект с нужным расширением. Чтобы со страницы гитхаба проект, собранный в реакте открылся, нужно файл штмл из папки паблик вынести в корневую папку и правильно прописать пути к файлам css, js. Один путь прописан в линке, в хэде href="public/scss/base.css", другой в футере для js. Также если использую фотку с компа для бэкграунда в styles.css, base.scss, нужно также прописать правильно путь к фотке, один путь прописан в base.scss, в body background-image: url('../images/abstractfirebloom.png'); если не использую для сборки локахост 3000 и второй путь прописан в файле App.css, в body background-image: url('../public/images/abstractfirebloom.png');, когда использую сборку в локахосте 3000, подключая его через терминал, зайдя в корневую папку проекта tresh_sass, используя команду npm run sart, нужно ещё разблокировать файл индекс.штмл, находящийся в папке паблик. Сборка при написании проекта в компе проходит без вопросов расширение jpg принимает. Обычный проект, такой как New year, Pandorium  и другие можно писать в штмл документе данном реактом, как в этом проекте. Для того, чтобы писать проект с запросами, ответами и т.д., как фин.проект, канбан доска, нужно писать функциями или классами, рендер, ретюрн использовать и т.д. Команда установки SASS в проект npm install sass. В этом проекте сасс можно не устанавливать. Изменить номер локахоста можно прописав в скрипте "start":"set PORT=8086 && react-scripts start", номер порта, который нужен --port 8086(работает, проверил), ещё так "start": "PORT=3006 react-scripts start" (пока не проверял). Ссылка на слайдеры, лайтбокс, css, js написания всяких интересных штук https://www.w3schools.com/howto/howto_js_slideshow.asp
+Скачать видео с ютюба на комп можно, добавив в ссылке на выбранное видео ss, exemple https://www.ssyoutube....., появляется окно где нужно скачать видос, нажимаю скачать, открывается новое окно с этим видео, нажимаю в жтом окне правую кнопку мыши, сохранить как, выбираю папку куда сохранить и сохраняю, потом вставляю это видео скомпа в <video></video>. Вставить видео с компа в ифрейм можно, с ифрейма в видео нет, не воспроизводит. Если видео нужно воспроизводить маузмув, то лучше видос скачать на комп и вставить его в видео. В ФАЙЛАХ ЦСС СКОМПРЕССОВАННЫХ В ПРОГРАММЕ КОМПРЕСС ЦСС ЗАМЕТКИ, КОТОРЫЕ Я ДЕЛАЮ НЕ ОСТАЮТСЯ - СТИРАЮТСЯ, НУЖНО ЗАПИСЫВАТЬ В СТАЙЛЕСЕ.ЦСС И ЗАЛПОМ НЕ КОПИРОВАТЬ КОД ИЗ АПП.ЦСС В СТАЙЛЕС.ЦСС. SVG можно скачать с https://freesvg.org/vector-drawing-of-atomic-badge-set-in-gold ,сохраняем в папку проекта. Сгенерированные svg https://realfavicongenerator.net/svg-favicon/ ,сохраняем в папку, свдж генерируется и в png, лучше ставить в хэд, в линке пнж, сделав ему прозрачный задний фон https://retoucher.online/ru/upload  или оставить фон, смотря какое свж, прописываем нужный путь. Перевести svg в png можно, чтобы сделать прозрачный фон, у svg задать фон и бордер можно в программе генерации в фавикон-->
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<!--<meta name="theme-color" content="#000000">
+<link rel="icon" href="%PUBLIC_URL%/favicon.ico">-->
+<link rel="icon" type="image/png" href="images/witch.png">
+<!--<link rel="icon" type="image/png" href="images/faviconradioact.png">-->
+<link rel="stylesheet" type="text/css" href="src/App.css"><!--можно работать в App.css, в index.css записывать заметки, а css/styl.css здесь не нужен, css/styl.css нужно прописывать в проектах не в реакт-->
+<!--<link rel="stylesheet" media="screen and (max-width: 1300px)" href="src/App.css">!--scss/base.css"-->
+<link rel="stylesheet" media="screen and (max-width: 1300px)" href="src/App.css"><!--scss/base.css"-->
+<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+<script src="http://thecode.local/wp-content/uploads/2019/06/jquery.js" type="text/javascript"></script>
+<script src='http://thecode.local/wp-content/uploads/2019/06/jqueryhighlight.js'>
+  </script>
+<script type="text/javascript">alert("Привет !!! Поздравляю ! ");</script>-->
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
+<!--При подключении в локахост сбивается мой скрипт Взял у ментера Даши из видео Скиллфэктори, практические вебинары-->
+<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>-->
+<title>👻 Casts</title>
+</head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <noscript><div id="root"></div></noscript>
+    <noscript>public/images/call_white_24dp.svg для штмл в корневой папке</noscript>
+    <noscript>background-image: url(images/1-fig.png); для styles.css</noscript>
+    <header class="header" id="#header">
+       <div class="continer headerContiner">
+          <article class="headerContiner-content">
+             <h1 class="title">Лесные злодеи: истории о похищениях людей</h1>
+          </article>
+       </div>
+    </header>
+    <main>
+      <section class="story" id="#story">
+        <div class="continer storyContiner">
+          <div class="storyContiner-content">
+            <article class="first-paragraph">
+              <p class="text">Лес не всегда является местом покоя и средой природы. В некоторых местах он считается домом злых духов и темных существ, которые могут похитить нерадивых людей.</p>
+              <!--<img class="photo_first-paragraph"src="images/photo-block-1.png">-->
+              <figure class="photo_first-paragraph">
+                <img class="img" src="images/photo-1.png" alt="">
+                <img class="img" src="images/photo-2.png" alt="">
+                <img class="img" src="images/photo-3.png" alt="">
+              </figure>
+              <p class="text">В многих культурах по всему миру рассказываются легенды о похищениях людей, их уводят в лес и оставляют наедине с опасными и дикими созданиями.</p>
+            </article>
+            <figure class="two-paragraph">
+              <!--<img class="photo_first-paragraph"src="images/photo-block-2.png">-->
+              <figure class="photo_two-paragraph">
+                <img class="img" src="images/photo-4.png" alt="">
+                <img class="img" src="images/photo-5.png" alt="">
+                <img class="img" src="images/photo-6.png" alt="">
+              </figure>
+              <p class="text">Одна из наиболее известных легенд о похищениях происходит из Японии, где говорят о "каппах". Каппа - это водные духи с клювообразной мордой, часто описываемые как имеющие перья на голове.</p>
+            </figure>
+            <article class="three-paragraph">
+              <!--<img class="photo_first-paragraph"src="images/photo-block-3.png">-->
+              <figure class="photo_three-paragraph">
+                <img class="img" src="images/photo-7.png" alt="">
+                <img class="img" src="images/photo-8.png" alt="">
+                <img class="img" src="images/photo-9.png" alt="">
+              </figure>
+              <p class="text">Считается, что они живут в реках и озерах и обитают в глубоких ямах, где они могут затаиться и нападать на жертв. Их славят не только за то, что они могут погрузить человека под воду и не выпустить, но и за то, что они поедают человеческие органы.</p>
+              <p class="text-continuation">Продолжение следует...</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" id="#footer">
+      <div class="continer footerContiner">
+        <div class="footerContiner-content"> 
+          <img class="img-footer"src="images/night-in-forest.png" alt="">
+        </div>
+      </div>
+       <noscript>public/script.js/main.js для штмл в корневой папке</noscript>
+       <script type="text/javascript" src="script.js/main.js"></script>
+    </footer>
   </body>
 </html>
